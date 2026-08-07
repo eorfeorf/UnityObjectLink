@@ -26,7 +26,7 @@
 <body>
   <header>
     <h1>Unity Object Link</h1>
-    <nav aria-label="言語と形式"><a href="README.html" lang="en">English</a> · <a href="README-ja.md">Markdown</a></nav>
+    <nav aria-label="言語と形式"><a href="README.html" lang="en">English</a> · <a href="../README-ja.md">Markdown</a></nav>
   </header>
   <main>
     <p>Unity Object Linkは、Unityのasset、sub-asset、Prefab内object、保存済みかつロード済みのScene内objectへの安定したリンクを生成します。リンクを開くと、同じProject IDを持つ起動中のUnity Editorで対象を選択してPingします。</p>
@@ -83,14 +83,14 @@
 
     <h2>セキュリティとプライバシー</h2>
     <p>OS handlerは<code>select</code> actionと、size制限された正確に3つのparameterだけを受理します。schemeとProject IDは検証後にのみlocal pathへ使用します。requestからexecutable、command、file pathを指定することはできません。対象projectが起動中であることを新しいheartbeatで確認できた場合だけ、固定されたユーザー単位の受信箱へ一意なrequestを書き込みます。</p>
-    <p>完全な検証仕様は<a href="Documentation~/Security-ja.md">セキュリティモデル</a>と<a href="Documentation~/UriSpecification-ja.md">URI仕様</a>を参照してください。</p>
+    <p>完全な検証仕様は<a href="Security-ja.md">セキュリティモデル</a>と<a href="UriSpecification-ja.md">URI仕様</a>を参照してください。</p>
 
     <h2>クライアント互換性</h2>
-    <p>独自URI linkの動作はapplicationとそのsecurity policyに依存します。独自schemeをplain textとして表示するclientや、確認promptを求めるclientもあります。<a href="Documentation~/Compatibility-ja.md">互換性</a>と<a href="Documentation~/ClientCompatibilityChecklist-ja.md">手動チェックリスト</a>を参照してください。HTTPS redirect serviceは意図的にversion 1の対象外としており、将来検討できます。</p>
+    <p>独自URI linkの動作はapplicationとそのsecurity policyに依存します。独自schemeをplain textとして表示するclientや、確認promptを求めるclientもあります。<a href="Compatibility-ja.md">互換性</a>と<a href="ClientCompatibilityChecklist-ja.md">手動チェックリスト</a>を参照してください。HTTPS redirect serviceは意図的にversion 1の対象外としており、将来検討できます。</p>
 
     <h2>開発</h2>
-    <p><code>DevelopmentProject~</code>はUnity 6用の対話的な開発projectです。<code>TestProject~</code>と<code>TestProject2022~</code>はUnity 6およびUnity 2022.3用の最小command-line検証projectです。packageのEditMode testは、URI検証、storage、受信箱動作、<code>GlobalObjectId</code>の往復変換を対象とします。<a href="Documentation~/Testing-ja.md">テスト</a>、<a href="Documentation~/Architecture-ja.md">アーキテクチャ</a>、<a href="Documentation~/PlatformIntegration-ja.md">プラットフォーム連携</a>を参照してください。</p>
+    <p><code>DevelopmentProject~</code>はUnity 6用の対話的な開発projectです。<code>TestProject~</code>と<code>TestProject2022~</code>はUnity 6およびUnity 2022.3用の最小command-line検証projectです。packageのEditMode testは、URI検証、storage、受信箱動作、<code>GlobalObjectId</code>の往復変換を対象とします。<a href="Testing-ja.md">テスト</a>、<a href="Architecture-ja.md">アーキテクチャ</a>、<a href="PlatformIntegration-ja.md">プラットフォーム連携</a>を参照してください。</p>
   </main>
-  <footer>English documentation: <a href="README.html" lang="en">README.html</a> · Markdown版: <a href="README-ja.md">README-ja.md</a></footer>
+  <footer>English documentation: <a href="README.html" lang="en">README.html</a> · Markdown版: <a href="../README-ja.md">README-ja.md</a></footer>
 </body>
 </html>

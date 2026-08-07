@@ -88,4 +88,4 @@ OS handlerは`select` actionと、size制限された正確に3つのparameter�
 `DevelopmentProject~`はUnity 6用の対話的な開発projectです。`TestProject~`と`TestProject2022~`はUnity 6およびUnity 2022.3用の最小command-line検証projectです。packageのEditMode testは、URI検証、storage、受信箱動作、`GlobalObjectId`の往復変換を対象とします。[テスト](Documentation~/Testing-ja.md)、[アーキテクチャ](Documentation~/Architecture-ja.md)、[プラットフォーム連携](Documentation~/PlatformIntegration-ja.md)を参照してください。
 
 English documentation: [README.md](README.md)  
-HTML版: [README-ja.html](README-ja.html)
+HTML版: [Documentation~/README-ja.html](Documentation~/README-ja.html)

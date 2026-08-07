@@ -88,4 +88,4 @@ Custom URI link behavior depends on the application and its security policy. Som
 `DevelopmentProject~` is the interactive Unity 6 development project. `TestProject~` and `TestProject2022~` are minimal Unity 6 and Unity 2022.3 command-line validation projects. The package's EditMode tests cover URI validation, storage and inbox behavior, and `GlobalObjectId` round trips. See [Testing](Documentation~/Testing.md), [Architecture](Documentation~/Architecture.md), and [Platform integration](Documentation~/PlatformIntegration.md).
 
 Japanese documentation: [README-ja.md](README-ja.md)  
-HTML version: [README.html](README.html)
+HTML version: [Documentation~/README.html](Documentation~/README.html)

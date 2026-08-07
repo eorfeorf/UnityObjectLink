@@ -26,7 +26,7 @@
 <body>
   <header>
     <h1>Unity Object Link</h1>
-    <nav aria-label="Language and format"><a href="README-ja.html" lang="ja">日本語</a> · <a href="README.md">Markdown</a></nav>
+    <nav aria-label="Language and format"><a href="README-ja.html" lang="ja">日本語</a> · <a href="../README.md">Markdown</a></nav>
   </header>
   <main>
     <p>Unity Object Link creates stable links to Unity assets, sub-assets, Prefab objects, and objects in saved, loaded Scenes. Opening a link selects and pings the object in the matching running Unity Editor project.</p>
@@ -83,14 +83,14 @@
 
     <h2>Security and privacy</h2>
     <p>The OS handler accepts only the <code>select</code> action and exactly three bounded parameters. Scheme and Project ID values are restricted before they are used in local paths. Requests cannot name an executable, command, or filesystem path. The handler only writes a uniquely named request into a fixed per-user inbox when a fresh heartbeat proves that the target project is running.</p>
-    <p>See <a href="Documentation~/Security.md">Security model</a> and <a href="Documentation~/UriSpecification.md">URI specification</a> for the complete validation contract.</p>
+    <p>See <a href="Security.md">Security model</a> and <a href="UriSpecification.md">URI specification</a> for the complete validation contract.</p>
 
     <h2>Client compatibility</h2>
-    <p>Custom URI link behavior depends on the application and its security policy. Some clients display a custom scheme as plain text or require a confirmation prompt. See <a href="Documentation~/Compatibility.md">Compatibility</a> and the <a href="Documentation~/ClientCompatibilityChecklist.md">manual checklist</a>. An HTTPS redirect service is intentionally outside version 1 and may be considered later.</p>
+    <p>Custom URI link behavior depends on the application and its security policy. Some clients display a custom scheme as plain text or require a confirmation prompt. See <a href="Compatibility.md">Compatibility</a> and the <a href="ClientCompatibilityChecklist.md">manual checklist</a>. An HTTPS redirect service is intentionally outside version 1 and may be considered later.</p>
 
     <h2>Development</h2>
-    <p><code>DevelopmentProject~</code> is the interactive Unity 6 development project. <code>TestProject~</code> and <code>TestProject2022~</code> are minimal Unity 6 and Unity 2022.3 command-line validation projects. The package's EditMode tests cover URI validation, storage and inbox behavior, and <code>GlobalObjectId</code> round trips. See <a href="Documentation~/Testing.md">Testing</a>, <a href="Documentation~/Architecture.md">Architecture</a>, and <a href="Documentation~/PlatformIntegration.md">Platform integration</a>.</p>
+    <p><code>DevelopmentProject~</code> is the interactive Unity 6 development project. <code>TestProject~</code> and <code>TestProject2022~</code> are minimal Unity 6 and Unity 2022.3 command-line validation projects. The package's EditMode tests cover URI validation, storage and inbox behavior, and <code>GlobalObjectId</code> round trips. See <a href="Testing.md">Testing</a>, <a href="Architecture.md">Architecture</a>, and <a href="PlatformIntegration.md">Platform integration</a>.</p>
   </main>
-  <footer>Japanese documentation: <a href="README-ja.html" lang="ja">README-ja.html</a> · Markdown source: <a href="README.md">README.md</a></footer>
+  <footer>Japanese documentation: <a href="README-ja.html" lang="ja">README-ja.html</a> · Markdown source: <a href="../README.md">README.md</a></footer>
 </body>
 </html>
