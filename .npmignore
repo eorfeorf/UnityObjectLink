@@ -1,0 +1,12 @@
+Library/
+Logs/
+Temp/
+UserSettings/
+DevelopmentProject~/
+TestProject~/
+TestProject2022~/
+.test-package/
+.utmp/
+*.sln
+plan.md
+plan.md.meta

@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "com.example.unity-object-link": "file:../..",
+    "com.unity.test-framework": "1.1.33"
+  },
+  "testables": [
+    "com.example.unity-object-link"
+  ]
+}
