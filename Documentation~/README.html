@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Unity Object Link package documentation">
+  <meta name="author" content="eorfeorf">
+  <title>Unity Object Link</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; }
+    body { max-width: 960px; margin: 0 auto; padding: 2rem 1.25rem 4rem; color: CanvasText; background: Canvas; }
+    header, footer { color: GrayText; }
+    header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem; align-items: baseline; border-bottom: 1px solid GrayText; }
+    h1, h2 { line-height: 1.25; }
+    h2 { margin-top: 2rem; }
+    a { color: LinkText; }
+    code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    :not(pre) > code { padding: .1rem .3rem; border-radius: .25rem; background: color-mix(in srgb, CanvasText 10%, Canvas); }
+    pre { overflow-x: auto; padding: 1rem; border: 1px solid GrayText; border-radius: .4rem; background: color-mix(in srgb, CanvasText 6%, Canvas); }
+    table { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; }
+    th, td { padding: .55rem .7rem; border: 1px solid GrayText; text-align: left; vertical-align: top; }
+    .notice { margin: 1.25rem 0; padding: .8rem 1rem; border-left: .3rem solid #d29922; background: color-mix(in srgb, #d29922 12%, Canvas); }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid GrayText; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Unity Object Link</h1>
+    <nav aria-label="Language and format"><a href="README-ja.html" lang="ja">日本語</a> · <a href="../README.md">Markdown</a></nav>
+  </header>
+  <main>
+    <p>Unity Object Link creates stable links to Unity assets, sub-assets, Prefab objects, and objects in saved, loaded Scenes. Opening a link selects and pings the object in the matching running Unity Editor project.</p>
+    <p>The package is Editor-only and supports Unity 2022.3 LTS or newer. Windows and macOS protocol handlers run entirely in the current user's account and require no administrator privileges or additional runtime.</p>
+    <aside class="notice"><strong>Important:</strong> The repository URL and license are publication placeholders. Replace them before publishing this repository. The package ID is <code>com.eorfeorf.unity-object-link</code> and the author is <code>eorfeorf</code>.</aside>
+
+    <h2>Install</h2>
+    <p>This repository is a UPM package at its root. During local development, choose <strong>Window &gt; Package Management &gt; Package Manager &gt; + &gt; Add package from disk</strong> and select <code>package.json</code>. After publication, use <strong>Add package from git URL</strong> with the repository URL.</p>
+    <p>Then:</p>
+    <ol>
+      <li>Open <strong>Edit &gt; Project Settings &gt; Unity Object Link</strong>.</li>
+      <li>Choose a stable, shared Project ID. The generated value is safe for local use but should be replaced with a recognizable identifier before links are shared.</li>
+      <li>Keep the default <code>unity-object-link</code> scheme or select an organization-specific scheme.</li>
+      <li>Click <strong>Apply Settings</strong>, then <strong>Register</strong>.</li>
+    </ol>
+    <p>The registration is per OS user. Register the same scheme once on every workstation that should open links. Only a running Unity Editor is eligible to receive a link.</p>
+
+    <h2>Copy a link</h2>
+    <p>Select one object and use one of these commands:</p>
+    <ul>
+      <li><strong>Assets &gt; Copy Unity Object Link</strong></li>
+      <li><strong>GameObject &gt; Copy Unity Object Link</strong></li>
+      <li><strong>Tools &gt; Unity Object Link &gt; Copy Link for Active Selection</strong></li>
+    </ul>
+    <p>The public API is also available:</p>
+    <pre><code>if (UnityObjectLink.UnityObjectLinkApi.TryCreateLink(target, out string uri, out string error))
+{
+    GUIUtility.systemCopyBuffer = uri;
+}</code></pre>
+    <p>A version 1 link has this form:</p>
+    <pre><code>unity-object-link://select?v=1&amp;project=sample-project&amp;object=&lt;URL-encoded GlobalObjectId&gt;</code></pre>
+
+    <h2>Supported targets and limits</h2>
+    <table>
+      <thead><tr><th>Target</th><th>Supported</th><th>Requirement</th></tr></thead>
+      <tbody>
+        <tr><td>Asset</td><td>Yes</td><td>The asset is saved in the Asset Database.</td></tr>
+        <tr><td>Sub-asset</td><td>Yes</td><td>The sub-asset has a persistent <code>GlobalObjectId</code>.</td></tr>
+        <tr><td>Object inside a Prefab asset</td><td>Yes</td><td>The Prefab is saved.</td></tr>
+        <tr><td>Scene object</td><td>Yes</td><td>The Scene has no unsaved changes and is currently loaded when the link opens.</td></tr>
+        <tr><td>Object in an unloaded Scene</td><td>No automatic load</td><td>The package reports that the object was not found and leaves Scenes unchanged.</td></tr>
+        <tr><td>Unsaved Scene or temporary object</td><td>No</td><td>Unity cannot provide a shareable persistent identity.</td></tr>
+        <tr><td>Play Mode-only object</td><td>No</td><td>The identity does not survive outside that session.</td></tr>
+      </tbody>
+    </table>
+    <p>Links contain no absolute file paths. A Project ID routes the request, and Unity's <code>GlobalObjectId</code> identifies the target.</p>
+
+    <h2>Uninstall</h2>
+    <p>Open <strong>Project Settings &gt; Unity Object Link</strong> and click <strong>Unregister</strong> before removing the package. If Unity is unavailable, run the packaged script manually.</p>
+    <p>Windows PowerShell:</p>
+    <pre><code>powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Editor\Platform\Windows\UnityObjectLinkProtocol.ps1 -Command uninstall -Scheme unity-object-link</code></pre>
+    <p>macOS:</p>
+    <pre><code>/bin/bash Editor/Platform/macOS/unity-object-link-protocol.sh uninstall unity-object-link</code></pre>
+
+    <h2>Security and privacy</h2>
+    <p>The OS handler accepts only the <code>select</code> action and exactly three bounded parameters. Scheme and Project ID values are restricted before they are used in local paths. Requests cannot name an executable, command, or filesystem path. The handler only writes a uniquely named request into a fixed per-user inbox when a fresh heartbeat proves that the target project is running.</p>
+    <p>See <a href="Security.md">Security model</a> and <a href="UriSpecification.md">URI specification</a> for the complete validation contract.</p>
+
+    <h2>Client compatibility</h2>
+    <p>Custom URI link behavior depends on the application and its security policy. Some clients display a custom scheme as plain text or require a confirmation prompt. See <a href="Compatibility.md">Compatibility</a> and the <a href="ClientCompatibilityChecklist.md">manual checklist</a>. An HTTPS redirect service is intentionally outside version 1 and may be considered later.</p>
+
+    <h2>Development</h2>
+    <p><code>DevelopmentProject~</code> is the interactive Unity 6 development project. <code>TestProject~</code> and <code>TestProject2022~</code> are minimal Unity 6 and Unity 2022.3 command-line validation projects. The package's EditMode tests cover URI validation, storage and inbox behavior, and <code>GlobalObjectId</code> round trips. See <a href="Testing.md">Testing</a>, <a href="Architecture.md">Architecture</a>, and <a href="PlatformIntegration.md">Platform integration</a>.</p>
+  </main>
+  <footer>Japanese documentation: <a href="README-ja.html" lang="ja">README-ja.html</a> · Markdown source: <a href="../README.md">README.md</a></footer>
+</body>
+</html>

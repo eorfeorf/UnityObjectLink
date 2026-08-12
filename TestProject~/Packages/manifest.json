@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "com.eorfeorf.unity-object-link": "file:../..",
+    "com.unity.test-framework": "1.6.0"
+  },
+  "testables": [
+    "com.eorfeorf.unity-object-link"
+  ]
+}

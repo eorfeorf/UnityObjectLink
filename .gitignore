@@ -11,6 +11,15 @@
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 .utmp/
+/.test-package/
+/TestProject~/Packages/packages-lock.json
+/TestProject~/ProjectSettings/*
+!/TestProject~/ProjectSettings/ProjectVersion.txt
+/TestProject~/TestResults.xml
+/TestProject2022~/Packages/packages-lock.json
+/TestProject2022~/ProjectSettings/*
+!/TestProject2022~/ProjectSettings/ProjectVersion.txt
+/TestProject2022~/TestResults.xml
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -18,6 +27,11 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Oo]bj/
+**/[Ll]ogs/
+**/[Uu]ser[Ss]ettings/
 *.log
 
 # By default unity supports Blender asset imports, *.blend1 blender files do not need to be committed to version control.

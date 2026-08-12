@@ -1,0 +1,22 @@
+{
+  "name": "com.eorfeorf.unity-object-link",
+  "version": "0.1.0",
+  "displayName": "Unity Object Link",
+  "description": "Open stable links to Unity assets and loaded scene objects in the matching running Unity Editor project.",
+  "unity": "2022.3",
+  "keywords": [
+    "editor",
+    "deep-link",
+    "global-object-id"
+  ],
+  "author": {
+    "name": "eorfeorf"
+  },
+  "samples": [
+    {
+      "displayName": "Basic Usage",
+      "description": "Creates a Unity Object Link from a custom Editor command.",
+      "path": "Samples~/Basic Usage"
+    }
+  ]
+}

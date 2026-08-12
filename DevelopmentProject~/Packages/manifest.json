@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.eorfeorf.unity-object-link": "file:../..",
     "com.unity.collab-proxy": "2.12.4",
     "com.unity.feature.development": "1.0.2",
     "com.unity.inputsystem": "1.19.0",
@@ -41,5 +42,8 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "testables": [
+    "com.eorfeorf.unity-object-link"
+  ]
 }
