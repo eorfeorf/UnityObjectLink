@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.example.unity-object-link": {
+    "com.eorfeorf.unity-object-link": {
       "version": "file:../..",
       "depth": 0,
       "source": "local",

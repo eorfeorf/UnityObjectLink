@@ -5,7 +5,7 @@ Unity Object Linkは、Unityのasset、sub-asset、Prefab内object、保存済�
 このpackageはEditor専用で、Unity 2022.3 LTS以降に対応します。Windows/macOSのprotocol handlerは現在のユーザーaccount内だけで動作し、管理者権限や追加runtimeを必要としません。
 
 > [!IMPORTANT]
-> `com.example.unity-object-link`、repository URL、licenseは公開前の仮情報です。このrepositoryを公開する前に置き換えてください。作者は`eorfeorf`です。
+> repository URL、licenseは公開前の仮情報です。このrepositoryを公開する前に置き換えてください。package IDは`com.eorfeorf.unity-object-link`、作者は`eorfeorf`です。
 
 ## 導入
 

@@ -152,5 +152,5 @@
 - 未保存Scene、一時生成オブジェクト、Play Modeだけに存在するオブジェクトは共有リンク化できない。
 - macOSはURLハンドラとしてアプリバンドルが必要なため、Windowsよりセットアップ実装が多い。
 - カスタムURIのクリック可否はブラウザやチャットツールのセキュリティ設定に左右される。
-- 作者表記は`eorfeorf`とする。仮package ID、repository URL、licenseは公開前に確定する。
+- 作者表記は`eorfeorf`、package IDは`com.eorfeorf.unity-object-link`とする。repository URL、licenseは公開前に確定する。
 - 実装・テスト・ドキュメントには、業務リポジトリ由来のコードや非公開情報を持ち込まない。

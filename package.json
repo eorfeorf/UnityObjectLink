@@ -1,5 +1,5 @@
 {
-  "name": "com.example.unity-object-link",
+  "name": "com.eorfeorf.unity-object-link",
   "version": "0.1.0",
   "displayName": "Unity Object Link",
   "description": "Open stable links to Unity assets and loaded scene objects in the matching running Unity Editor project.",

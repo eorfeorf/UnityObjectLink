@@ -11,10 +11,8 @@
     body { max-width: 960px; margin: 0 auto; padding: 2rem 1.25rem 4rem; color: CanvasText; background: Canvas; }
     header, footer { color: GrayText; }
     header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem; align-items: baseline; border-bottom: 1px solid GrayText; }
-    h1, h2 { line-height: 1.25; }
-    h2 { margin-top: 2rem; }
-    a { color: LinkText; }
-    code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    h1, h2 { line-height: 1.25; } h2 { margin-top: 2rem; }
+    a { color: LinkText; } code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
     :not(pre) > code { padding: .1rem .3rem; border-radius: .25rem; background: color-mix(in srgb, CanvasText 10%, Canvas); }
     pre { overflow-x: auto; padding: 1rem; border: 1px solid GrayText; border-radius: .4rem; background: color-mix(in srgb, CanvasText 6%, Canvas); }
     table { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; }
@@ -24,10 +22,7 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Unity Object Link</h1>
-    <nav aria-label="言語と形式"><a href="README.html" lang="en">English</a> · <a href="../README-ja.md">Markdown</a></nav>
-  </header>
+  <header><h1>Unity Object Link</h1><nav aria-label="言語と形式"><a href="README.html" lang="en">English</a> · <a href="README-ja.md">Markdown</a></nav></header>
   <main>
     <p>Unity Object Linkは、Unityのasset、sub-asset、Prefab内object、保存済みかつロード済みのScene内objectへの安定したリンクを生成します。リンクを開くと、同じProject IDを持つ起動中のUnity Editorで対象を選択してPingします。</p>
     <p>このpackageはEditor専用で、Unity 2022.3 LTS以降に対応します。Windows/macOSのprotocol handlerは現在のユーザーaccount内だけで動作し、管理者権限や追加runtimeを必要としません。</p>
@@ -35,22 +30,11 @@
 
     <h2>導入</h2>
     <p>このrepositoryはrootがUPM packageです。ローカル開発では <strong>Window &gt; Package Management &gt; Package Manager &gt; + &gt; Add package from disk</strong> を選び、<code>package.json</code>を指定します。公開後は <strong>Add package from git URL</strong> でrepository URLを指定します。</p>
-    <p>続いて次の操作を行います。</p>
-    <ol>
-      <li><strong>Edit &gt; Project Settings &gt; Unity Object Link</strong> を開きます。</li>
-      <li>安定した共有用Project IDを設定します。自動生成値はローカル利用には安全ですが、リンク共有前に識別しやすい値へ変更してください。</li>
-      <li>既定の<code>unity-object-link</code> schemeを使用するか、組織専用のschemeを指定します。</li>
-      <li><strong>Apply Settings</strong>、続いて <strong>Register</strong> を押します。</li>
-    </ol>
+    <ol><li><strong>Edit &gt; Project Settings &gt; Unity Object Link</strong> を開きます。</li><li>安定した共有用Project IDを設定します。リンク共有前に識別しやすい値へ変更してください。</li><li>既定の<code>unity-object-link</code> schemeを使用するか、組織専用のschemeを指定します。</li><li><strong>Apply Settings</strong>、続いて <strong>Register</strong> を押します。</li></ol>
     <p>登録はOSユーザー単位です。リンクを開く各workstationで同じschemeを1回ずつ登録してください。リンクを受け取れるのは起動中のUnity Editorだけです。</p>
 
     <h2>リンクのコピー</h2>
-    <p>objectを1つ選択し、次のいずれかを実行します。</p>
-    <ul>
-      <li><strong>Assets &gt; Copy Unity Object Link</strong></li>
-      <li><strong>GameObject &gt; Copy Unity Object Link</strong></li>
-      <li><strong>Tools &gt; Unity Object Link &gt; Copy Link for Active Selection</strong></li>
-    </ul>
+    <p>objectを1つ選択し、<strong>Assets &gt; Copy Unity Object Link</strong>、<strong>GameObject &gt; Copy Unity Object Link</strong>、または <strong>Tools &gt; Unity Object Link &gt; Copy Link for Active Selection</strong> を実行します。</p>
     <p>公開APIも利用できます。</p>
     <pre><code>if (UnityObjectLink.UnityObjectLinkApi.TryCreateLink(target, out string uri, out string error))
 {
@@ -60,37 +44,32 @@
     <pre><code>unity-object-link://select?v=1&amp;project=sample-project&amp;object=&lt;URL-encoded GlobalObjectId&gt;</code></pre>
 
     <h2>対応対象と制限</h2>
-    <table>
-      <thead><tr><th>対象</th><th>対応</th><th>条件</th></tr></thead>
-      <tbody>
-        <tr><td>Asset</td><td>対応</td><td>Asset Databaseへ保存済み</td></tr>
-        <tr><td>Sub-asset</td><td>対応</td><td>永続的な<code>GlobalObjectId</code>を持つ</td></tr>
-        <tr><td>Prefab asset内object</td><td>対応</td><td>Prefabが保存済み</td></tr>
-        <tr><td>Scene object</td><td>対応</td><td>Sceneに未保存の変更がなく、リンクを開いた時点でロード済み</td></tr>
-        <tr><td>未ロードScene内object</td><td>自動ロードしない</td><td>objectが見つからないことを通知し、Scene構成は変更しない</td></tr>
-        <tr><td>未保存Sceneまたは一時object</td><td>非対応</td><td>Unityが共有可能な永続IDを提供できない</td></tr>
-        <tr><td>Play Modeだけのobject</td><td>非対応</td><td>そのsession以外では同一性を維持できない</td></tr>
-      </tbody>
-    </table>
+    <table><thead><tr><th>対象</th><th>対応</th><th>条件</th></tr></thead><tbody>
+      <tr><td>Asset</td><td>対応</td><td>Asset Databaseへ保存済み</td></tr>
+      <tr><td>Sub-asset</td><td>対応</td><td>永続的な<code>GlobalObjectId</code>を持つ</td></tr>
+      <tr><td>Prefab asset内object</td><td>対応</td><td>Prefabが保存済み</td></tr>
+      <tr><td>Scene object</td><td>対応</td><td>Sceneに未保存の変更がなく、リンクを開いた時点でロード済み</td></tr>
+      <tr><td>未ロードScene内object</td><td>自動ロードしない</td><td>objectが見つからないことを通知し、Scene構成は変更しない</td></tr>
+      <tr><td>未保存Sceneまたは一時object</td><td>非対応</td><td>Unityが共有可能な永続IDを提供できない</td></tr>
+      <tr><td>Play Modeだけのobject</td><td>非対応</td><td>そのsession以外では同一性を維持できない</td></tr>
+    </tbody></table>
     <p>リンクに絶対ファイルpathは含まれません。Project IDが配送先を決め、Unityの<code>GlobalObjectId</code>が対象を識別します。</p>
 
     <h2>アンインストール</h2>
     <p>packageを削除する前に <strong>Project Settings &gt; Unity Object Link</strong> を開き、<strong>Unregister</strong> を押します。Unityを利用できない場合は、同梱scriptを手動実行してください。</p>
-    <p>Windows PowerShell:</p>
-    <pre><code>powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Editor\Platform\Windows\UnityObjectLinkProtocol.ps1 -Command uninstall -Scheme unity-object-link</code></pre>
-    <p>macOS:</p>
-    <pre><code>/bin/bash Editor/Platform/macOS/unity-object-link-protocol.sh uninstall unity-object-link</code></pre>
+    <p>Windows PowerShell:</p><pre><code>powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Editor\Platform\Windows\UnityObjectLinkProtocol.ps1 -Command uninstall -Scheme unity-object-link</code></pre>
+    <p>macOS:</p><pre><code>/bin/bash Editor/Platform/macOS/unity-object-link-protocol.sh uninstall unity-object-link</code></pre>
 
     <h2>セキュリティとプライバシー</h2>
     <p>OS handlerは<code>select</code> actionと、size制限された正確に3つのparameterだけを受理します。schemeとProject IDは検証後にのみlocal pathへ使用します。requestからexecutable、command、file pathを指定することはできません。対象projectが起動中であることを新しいheartbeatで確認できた場合だけ、固定されたユーザー単位の受信箱へ一意なrequestを書き込みます。</p>
-    <p>完全な検証仕様は<a href="Security-ja.md">セキュリティモデル</a>と<a href="UriSpecification-ja.md">URI仕様</a>を参照してください。</p>
+    <p>完全な検証仕様は<a href="Documentation~/Security-ja.md">セキュリティモデル</a>と<a href="Documentation~/UriSpecification-ja.md">URI仕様</a>を参照してください。</p>
 
     <h2>クライアント互換性</h2>
-    <p>独自URI linkの動作はapplicationとそのsecurity policyに依存します。独自schemeをplain textとして表示するclientや、確認promptを求めるclientもあります。<a href="Compatibility-ja.md">互換性</a>と<a href="ClientCompatibilityChecklist-ja.md">手動チェックリスト</a>を参照してください。HTTPS redirect serviceは意図的にversion 1の対象外としており、将来検討できます。</p>
+    <p>独自URI linkの動作はapplicationとそのsecurity policyに依存します。独自schemeをplain textとして表示するclientや、確認promptを求めるclientもあります。<a href="Documentation~/Compatibility-ja.md">互換性</a>と<a href="Documentation~/ClientCompatibilityChecklist-ja.md">手動チェックリスト</a>を参照してください。HTTPS redirect serviceは意図的にversion 1の対象外としており、将来検討できます。</p>
 
     <h2>開発</h2>
-    <p><code>DevelopmentProject~</code>はUnity 6用の対話的な開発projectです。<code>TestProject~</code>と<code>TestProject2022~</code>はUnity 6およびUnity 2022.3用の最小command-line検証projectです。packageのEditMode testは、URI検証、storage、受信箱動作、<code>GlobalObjectId</code>の往復変換を対象とします。<a href="Testing-ja.md">テスト</a>、<a href="Architecture-ja.md">アーキテクチャ</a>、<a href="PlatformIntegration-ja.md">プラットフォーム連携</a>を参照してください。</p>
+    <p><code>DevelopmentProject~</code>はUnity 6用の対話的な開発projectです。<code>TestProject~</code>と<code>TestProject2022~</code>はUnity 6およびUnity 2022.3用の最小command-line検証projectです。packageのEditMode testは、URI検証、storage、受信箱動作、<code>GlobalObjectId</code>の往復変換を対象とします。<a href="Documentation~/Testing-ja.md">テスト</a>、<a href="Documentation~/Architecture-ja.md">アーキテクチャ</a>、<a href="Documentation~/PlatformIntegration-ja.md">プラットフォーム連携</a>を参照してください。</p>
   </main>
-  <footer>English documentation: <a href="README.html" lang="en">README.html</a> · Markdown版: <a href="../README-ja.md">README-ja.md</a></footer>
+  <footer>English documentation: <a href="README.html" lang="en">README.html</a> · Markdown版: <a href="README-ja.md">README-ja.md</a></footer>
 </body>
 </html>

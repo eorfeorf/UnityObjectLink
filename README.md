@@ -5,7 +5,7 @@ Unity Object Link creates stable links to Unity assets, sub-assets, Prefab objec
 The package is Editor-only and supports Unity 2022.3 LTS or newer. Windows and macOS protocol handlers run entirely in the current user's account and require no administrator privileges or additional runtime.
 
 > [!IMPORTANT]
-> `com.example.unity-object-link`, the repository URL, and the license are publication placeholders. Replace them before publishing this repository. The author is `eorfeorf`.
+> The repository URL and license are publication placeholders. Replace them before publishing this repository. The package ID is `com.eorfeorf.unity-object-link` and the author is `eorfeorf`.
 
 ## Install
 
