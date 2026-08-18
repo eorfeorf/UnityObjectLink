@@ -26,10 +26,10 @@
   <main>
     <p>Unity Object Linkは、Unityのasset、sub-asset、Prefab内object、保存済みかつロード済みのScene内objectへの安定したリンクを生成します。リンクを開くと、同じProject IDを持つ起動中のUnity Editorで対象を選択してPingします。</p>
     <p>このpackageはEditor専用で、Unity 2022.3 LTS以降に対応します。Windows/macOSのprotocol handlerは現在のユーザーaccount内だけで動作し、管理者権限や追加runtimeを必要としません。</p>
-    <aside class="notice"><strong>重要:</strong> repository URL、licenseは公開前の仮情報です。このrepositoryを公開する前に置き換えてください。package IDは<code>com.eorfeorf.unity-object-link</code>、作者は<code>eorfeorf</code>です。</aside>
+    <aside class="notice"><strong>Package metadata:</strong> package ID <code>com.eorfeorf.unity-object-link</code> · 作者 <code>eorfeorf</code> · license <a href="LICENSE.md">MIT</a></aside>
 
     <h2>導入</h2>
-    <p>このrepositoryはrootがUPM packageです。ローカル開発では <strong>Window &gt; Package Management &gt; Package Manager &gt; + &gt; Add package from disk</strong> を選び、<code>package.json</code>を指定します。公開後は <strong>Add package from git URL</strong> でrepository URLを指定します。</p>
+    <p>このrepositoryはrootがUPM packageです。ローカル開発では <strong>Window &gt; Package Management &gt; Package Manager &gt; + &gt; Add package from disk</strong> を選び、<code>package.json</code>を指定します。GitHubから導入する場合は <strong>Add package from git URL</strong> で<code>https://github.com/eorfeorf/UnityObjectLink.git</code>を指定します。</p>
     <ol><li><strong>Edit &gt; Project Settings &gt; Unity Object Link</strong> を開きます。</li><li>安定した共有用Project IDを設定します。リンク共有前に識別しやすい値へ変更してください。</li><li>既定の<code>unity-object-link</code> schemeを使用するか、組織専用のschemeを指定します。</li><li><strong>Apply Settings</strong>、続いて <strong>Register</strong> を押します。</li></ol>
     <p>登録はOSユーザー単位です。リンクを開く各workstationで同じschemeを1回ずつ登録してください。リンクを受け取れるのは起動中のUnity Editorだけです。</p>
 
@@ -69,6 +69,9 @@
 
     <h2>開発</h2>
     <p><code>DevelopmentProject~</code>はUnity 6用の対話的な開発projectです。<code>TestProject~</code>と<code>TestProject2022~</code>はUnity 6およびUnity 2022.3用の最小command-line検証projectです。packageのEditMode testは、URI検証、storage、受信箱動作、<code>GlobalObjectId</code>の往復変換を対象とします。<a href="Documentation~/Testing-ja.md">テスト</a>、<a href="Documentation~/Architecture-ja.md">アーキテクチャ</a>、<a href="Documentation~/PlatformIntegration-ja.md">プラットフォーム連携</a>を参照してください。</p>
+
+    <h2>ライセンス</h2>
+    <p>このprojectは<a href="LICENSE.md">MIT License</a>で公開しています。</p>
   </main>
   <footer>English documentation: <a href="README.html" lang="en">README.html</a> · Markdown版: <a href="README-ja.md">README-ja.md</a></footer>
 </body>

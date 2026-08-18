@@ -4,13 +4,19 @@
   "displayName": "Unity Object Link",
   "description": "Open stable links to Unity assets and loaded scene objects in the matching running Unity Editor project.",
   "unity": "2022.3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eorfeorf/UnityObjectLink.git"
+  },
+  "license": "MIT",
   "keywords": [
     "editor",
     "deep-link",
     "global-object-id"
   ],
   "author": {
-    "name": "eorfeorf"
+    "name": "eorfeorf",
+    "url": "https://github.com/eorfeorf"
   },
   "samples": [
     {

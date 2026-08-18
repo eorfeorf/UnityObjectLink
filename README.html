@@ -26,10 +26,10 @@
   <main>
     <p>Unity Object Link creates stable links to Unity assets, sub-assets, Prefab objects, and objects in saved, loaded Scenes. Opening a link selects and pings the object in the matching running Unity Editor project.</p>
     <p>The package is Editor-only and supports Unity 2022.3 LTS or newer. Windows and macOS protocol handlers run entirely in the current user's account and require no administrator privileges or additional runtime.</p>
-    <aside class="notice"><strong>Important:</strong> The repository URL and license are publication placeholders. Replace them before publishing this repository. The package ID is <code>com.eorfeorf.unity-object-link</code> and the author is <code>eorfeorf</code>.</aside>
+    <aside class="notice"><strong>Package metadata:</strong> Package ID <code>com.eorfeorf.unity-object-link</code> · Author <code>eorfeorf</code> · License <a href="LICENSE.md">MIT</a></aside>
 
     <h2>Install</h2>
-    <p>This repository is a UPM package at its root. During local development, choose <strong>Window &gt; Package Management &gt; Package Manager &gt; + &gt; Add package from disk</strong> and select <code>package.json</code>. After publication, use <strong>Add package from git URL</strong> with the repository URL.</p>
+    <p>This repository is a UPM package at its root. During local development, choose <strong>Window &gt; Package Management &gt; Package Manager &gt; + &gt; Add package from disk</strong> and select <code>package.json</code>. To install from GitHub, use <strong>Add package from git URL</strong> with <code>https://github.com/eorfeorf/UnityObjectLink.git</code>.</p>
     <ol><li>Open <strong>Edit &gt; Project Settings &gt; Unity Object Link</strong>.</li><li>Choose a stable, shared Project ID. Replace the generated value with a recognizable identifier before sharing links.</li><li>Keep the default <code>unity-object-link</code> scheme or select an organization-specific scheme.</li><li>Click <strong>Apply Settings</strong>, then <strong>Register</strong>.</li></ol>
     <p>Registration is per OS user. Register the same scheme once on every workstation that should open links. Only a running Unity Editor is eligible to receive a link.</p>
 
@@ -69,6 +69,9 @@
 
     <h2>Development</h2>
     <p><code>DevelopmentProject~</code> is the interactive Unity 6 development project. <code>TestProject~</code> and <code>TestProject2022~</code> are minimal Unity 6 and Unity 2022.3 command-line validation projects. The package's EditMode tests cover URI validation, storage and inbox behavior, and <code>GlobalObjectId</code> round trips. See <a href="Documentation~/Testing.md">Testing</a>, <a href="Documentation~/Architecture.md">Architecture</a>, and <a href="Documentation~/PlatformIntegration.md">Platform integration</a>.</p>
+
+    <h2>License</h2>
+    <p>This project is licensed under the <a href="LICENSE.md">MIT License</a>.</p>
   </main>
   <footer>Japanese documentation: <a href="README-ja.html" lang="ja">README-ja.html</a> · Markdown source: <a href="README.md">README.md</a></footer>
 </body>

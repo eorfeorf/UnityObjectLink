@@ -37,7 +37,7 @@
 - OS登録はUnityメニューと手動スクリプトの両方を提供し、ユーザー単位・管理者権限不要とする。
 - 未ロードSceneは開かず、通知して終了する。
 - README、CHANGELOG、Documentationは日本語版と英語版を用意し、Tests、Samplesとともに公開リポジトリへそのまま配置できる構成にする。
-- リポジトリ公開、package配布、正式なpackage ID、repository URL、ライセンス選定は実装と分離した公開前作業とする。作者は`eorfeorf`とする。
+- リポジトリ公開、package配布は実装と分離した公開前作業とする。package IDは`com.eorfeorf.unity-object-link`、作者は`eorfeorf`、licenseはMITとする。
 
 ## 設計
 
@@ -48,7 +48,7 @@
 - Unity標準APIと.NET Standardで利用可能なAPIだけを使い、private packageやproprietary dependencyを追加しない。
 - 公開APIはURI生成、URI解析、設定参照、処理結果の通知境界に絞る。
 - OSスクリプト、受信箱、heartbeat、ファイル配置の詳細はinternalに閉じる。
-- package metadataの作者は`eorfeorf`とする。repository URLとlicenseは、公開前に個人プロジェクトの正式情報へ置き換える。
+- package metadataの作者は`eorfeorf`、repository URLは`https://github.com/eorfeorf/UnityObjectLink.git`、licenseはMITとする。
 
 ### 2. Project Settings
 
@@ -131,7 +131,7 @@
 - `Documentation~/`
 - `README.md`
 - `CHANGELOG.md`
-- `LICENSE.md`（ライセンス決定後）
+- `LICENSE.md`
 - `.github/`（公開・CI方針決定後）
 
 ## Todos
@@ -152,5 +152,5 @@
 - 未保存Scene、一時生成オブジェクト、Play Modeだけに存在するオブジェクトは共有リンク化できない。
 - macOSはURLハンドラとしてアプリバンドルが必要なため、Windowsよりセットアップ実装が多い。
 - カスタムURIのクリック可否はブラウザやチャットツールのセキュリティ設定に左右される。
-- 作者表記は`eorfeorf`、package IDは`com.eorfeorf.unity-object-link`とする。repository URL、licenseは公開前に確定する。
+- 作者表記は`eorfeorf`、package IDは`com.eorfeorf.unity-object-link`、repository URLは`https://github.com/eorfeorf/UnityObjectLink.git`、licenseはMITとする。バージョンとタグは公開時に別途確定する。
 - 実装・テスト・ドキュメントには、業務リポジトリ由来のコードや非公開情報を持ち込まない。

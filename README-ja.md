@@ -5,11 +5,11 @@ Unity Object Linkは、Unityのasset、sub-asset、Prefab内object、保存済�
 このpackageはEditor専用で、Unity 2022.3 LTS以降に対応します。Windows/macOSのprotocol handlerは現在のユーザーaccount内だけで動作し、管理者権限や追加runtimeを必要としません。
 
 > [!IMPORTANT]
-> repository URL、licenseは公開前の仮情報です。このrepositoryを公開する前に置き換えてください。package IDは`com.eorfeorf.unity-object-link`、作者は`eorfeorf`です。
+> package ID: `com.eorfeorf.unity-object-link` · 作者: `eorfeorf` · license: MIT
 
 ## 導入
 
-このrepositoryはrootがUPM packageです。ローカル開発では **Window > Package Management > Package Manager > + > Add package from disk** を選び、`package.json`を指定します。公開後は **Add package from git URL** でrepository URLを指定します。
+このrepositoryはrootがUPM packageです。ローカル開発では **Window > Package Management > Package Manager > + > Add package from disk** を選び、`package.json`を指定します。GitHubから導入する場合は **Add package from git URL** で`https://github.com/eorfeorf/UnityObjectLink.git`を指定します。
 
 続いて次の操作を行います。
 
@@ -86,6 +86,10 @@ OS handlerは`select` actionと、size制限された正確に3つのparameter�
 ## 開発
 
 `DevelopmentProject~`はUnity 6用の対話的な開発projectです。`TestProject~`と`TestProject2022~`はUnity 6およびUnity 2022.3用の最小command-line検証projectです。packageのEditMode testは、URI検証、storage、受信箱動作、`GlobalObjectId`の往復変換を対象とします。[テスト](Documentation~/Testing-ja.md)、[アーキテクチャ](Documentation~/Architecture-ja.md)、[プラットフォーム連携](Documentation~/PlatformIntegration-ja.md)を参照してください。
+
+## ライセンス
+
+このprojectはMIT Licenseで公開しています。[LICENSE.md](LICENSE.md)を参照してください。
 
 English documentation: [README.md](README.md)  
 HTML版: [Documentation~/README-ja.html](Documentation~/README-ja.html)

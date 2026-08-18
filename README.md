@@ -5,11 +5,11 @@ Unity Object Link creates stable links to Unity assets, sub-assets, Prefab objec
 The package is Editor-only and supports Unity 2022.3 LTS or newer. Windows and macOS protocol handlers run entirely in the current user's account and require no administrator privileges or additional runtime.
 
 > [!IMPORTANT]
-> The repository URL and license are publication placeholders. Replace them before publishing this repository. The package ID is `com.eorfeorf.unity-object-link` and the author is `eorfeorf`.
+> Package ID: `com.eorfeorf.unity-object-link` · Author: `eorfeorf` · License: MIT
 
 ## Install
 
-This repository is a UPM package at its root. During local development, choose **Window > Package Management > Package Manager > + > Add package from disk** and select `package.json`. After publication, use **Add package from git URL** with the repository URL.
+This repository is a UPM package at its root. During local development, choose **Window > Package Management > Package Manager > + > Add package from disk** and select `package.json`. To install from GitHub, use **Add package from git URL** with `https://github.com/eorfeorf/UnityObjectLink.git`.
 
 Then:
 
@@ -86,6 +86,10 @@ Custom URI link behavior depends on the application and its security policy. Som
 ## Development
 
 `DevelopmentProject~` is the interactive Unity 6 development project. `TestProject~` and `TestProject2022~` are minimal Unity 6 and Unity 2022.3 command-line validation projects. The package's EditMode tests cover URI validation, storage and inbox behavior, and `GlobalObjectId` round trips. See [Testing](Documentation~/Testing.md), [Architecture](Documentation~/Architecture.md), and [Platform integration](Documentation~/PlatformIntegration.md).
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE.md](LICENSE.md).
 
 Japanese documentation: [README-ja.md](README-ja.md)  
 HTML version: [Documentation~/README.html](Documentation~/README.html)
