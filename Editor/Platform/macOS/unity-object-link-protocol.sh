@@ -143,7 +143,8 @@ install_protocol() {
   run_osacompile -o "$app" "$source_file"
   plist="$app/Contents/Info.plist"
   bundle_suffix="$(bundle_identifier_suffix "$normalized")"
-  run_plist_buddy -c "Set :CFBundleIdentifier com.eorfeorf.UnityObjectLink.$bundle_suffix" "$plist" >/dev/null
+  run_plist_buddy -c 'Delete :CFBundleIdentifier' "$plist" >/dev/null 2>&1 || true
+  run_plist_buddy -c "Add :CFBundleIdentifier string com.eorfeorf.UnityObjectLink.$bundle_suffix" "$plist"
   run_plist_buddy -c 'Delete :CFBundleURLTypes' "$plist" >/dev/null 2>&1 || true
   run_plist_buddy -c 'Add :CFBundleURLTypes array' "$plist"
   run_plist_buddy -c 'Add :CFBundleURLTypes:0 dict' "$plist"

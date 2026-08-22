@@ -65,7 +65,7 @@ source_file="$(dirname "$app")/handler.applescript"
 [[ -f "$stable_script" && -f "$source_file" && -f "$app/Contents/Info.plist" ]] || fail 'Generated helper files are incomplete.'
 cmp -s "$handler" "$stable_script" || fail 'The stable handler is not a copy of the package handler.'
 grep -Fq " dispatch '' " "$source_file" || fail 'AppleScript does not pass the URI to dispatch safely.'
-grep -Fq "Set :CFBundleIdentifier com.eorfeorf.UnityObjectLink.uol-dot-test-plus-installer" "$calls" || fail 'Bundle identifier encoding was not applied.'
+grep -Fq "Add :CFBundleIdentifier string com.eorfeorf.UnityObjectLink.uol-dot-test-plus-installer" "$calls" || fail 'Bundle identifier encoding was not applied.'
 grep -Fq "Add :CFBundleURLTypes:0:CFBundleURLSchemes:0 string $scheme" "$calls" || fail 'URL scheme was not written to the plist.'
 grep -Fq "register=$app" "$calls" || fail 'Launch Services registration was not requested.'
 
