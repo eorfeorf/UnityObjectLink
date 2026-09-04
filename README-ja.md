@@ -77,19 +77,19 @@ macOS:
 
 OS handlerは`select` actionと、size制限された正確に3つのparameterだけを受理します。schemeとProject IDは検証後にのみlocal pathへ使用します。requestからexecutable、command、file pathを指定することはできません。対象projectが起動中であることを新しいheartbeatで確認できた場合だけ、固定されたユーザー単位の受信箱へ一意なrequestを書き込みます。
 
-完全な検証仕様は[セキュリティモデル](Documentation~/Security-ja.md)と[URI仕様](Documentation~/UriSpecification-ja.md)を参照してください。
+handlerはaction、parameter数、入力size、scheme、Project ID、heartbeatを検証してからrequestを書き込みます。linkからexecutable、command、file pathを指定することはできません。
 
 ## クライアント互換性
 
-独自URI linkの動作はapplicationとそのsecurity policyに依存します。独自schemeをplain textとして表示するclientや、確認promptを求めるclientもあります。[互換性](Documentation~/Compatibility-ja.md)と[手動チェックリスト](Documentation~/ClientCompatibilityChecklist-ja.md)を参照してください。HTTPS redirect serviceは意図的にversion 1の対象外としており、将来検討できます。
+独自URI linkの動作はapplicationとそのsecurity policyに依存します。独自schemeをplain textとして表示するclientや、確認promptを求めるclientもあります。linkを共有する前に対象browserやcollaboration clientで確認してください。HTTPS redirect serviceは意図的にversion 1の対象外としており、将来検討できます。
 
 ## 開発
 
-`DevelopmentProject~`はUnity 6用の対話的な開発projectです。`TestProject~`と`TestProject2022~`はUnity 6およびUnity 2022.3用の最小command-line検証projectです。packageのEditMode testは、URI検証、storage、受信箱動作、`GlobalObjectId`の往復変換を対象とします。[テスト](Documentation~/Testing-ja.md)、[アーキテクチャ](Documentation~/Architecture-ja.md)、[プラットフォーム連携](Documentation~/PlatformIntegration-ja.md)を参照してください。
+`DevelopmentProject~`はUnity 6用の対話的な開発projectです。`TestProject~`と`TestProject2022~`はUnity 6およびUnity 2022.3用の最小command-line検証projectです。packageのEditMode testは、URI検証、storage、受信箱動作、`GlobalObjectId`の往復変換を対象とします。
 
 ## ライセンス
 
 このprojectはMIT Licenseで公開しています。[LICENSE.md](LICENSE.md)を参照してください。
 
 English documentation: [README.md](README.md)  
-HTML版: [Documentation~/README-ja.html](Documentation~/README-ja.html)
+HTML版: [README-ja.html](README-ja.html)

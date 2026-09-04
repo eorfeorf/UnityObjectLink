@@ -22,3 +22,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - A full Windows OS-activation-to-Unity-selection EditMode E2E test, registration ownership protection, and visible inbox receive state.
 - Safe generated Project IDs, pending-scheme cleanup enforcement, and rejection of Scene objects with unsaved changes.
 - Bilingual English/Japanese architecture, URI, public API, security, platform, and client compatibility documentation.
+
+### Changed
+
+- Consolidated user documentation into the root README Markdown and HTML files.

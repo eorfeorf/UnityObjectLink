@@ -77,19 +77,19 @@ macOS:
 
 The OS handler accepts only the `select` action and exactly three bounded parameters. Scheme and Project ID values are restricted before they are used in local paths. Requests cannot name an executable, command, or filesystem path. The handler only writes a uniquely named request into a fixed per-user inbox when a fresh heartbeat proves that the target project is running.
 
-See [Security model](Documentation~/Security.md) and [URI specification](Documentation~/UriSpecification.md) for the complete validation contract.
+The handler validates the action, parameter count, input sizes, scheme, Project ID, and heartbeat before writing a request; links cannot supply an executable, command, or filesystem path.
 
 ## Client compatibility
 
-Custom URI link behavior depends on the application and its security policy. Some clients display a custom scheme as plain text or require a confirmation prompt. See [Compatibility](Documentation~/Compatibility.md) and the [manual checklist](Documentation~/ClientCompatibilityChecklist.md). An HTTPS redirect service is intentionally outside version 1 and may be considered later.
+Custom URI link behavior depends on the application and its security policy. Some clients display a custom scheme as plain text or require a confirmation prompt. Verify the target browser or collaboration client before sharing links. An HTTPS redirect service is intentionally outside version 1 and may be considered later.
 
 ## Development
 
-`DevelopmentProject~` is the interactive Unity 6 development project. `TestProject~` and `TestProject2022~` are minimal Unity 6 and Unity 2022.3 command-line validation projects. The package's EditMode tests cover URI validation, storage and inbox behavior, and `GlobalObjectId` round trips. See [Testing](Documentation~/Testing.md), [Architecture](Documentation~/Architecture.md), and [Platform integration](Documentation~/PlatformIntegration.md).
+`DevelopmentProject~` is the interactive Unity 6 development project. `TestProject~` and `TestProject2022~` are minimal Unity 6 and Unity 2022.3 command-line validation projects. The package's EditMode tests cover URI validation, storage and inbox behavior, and `GlobalObjectId` round trips.
 
 ## License
 
 This project is licensed under the MIT License. See [LICENSE.md](LICENSE.md).
 
 Japanese documentation: [README-ja.md](README-ja.md)  
-HTML version: [Documentation~/README.html](Documentation~/README.html)
+HTML version: [README.html](README.html)

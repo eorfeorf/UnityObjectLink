@@ -26,12 +26,12 @@
 <body>
   <header>
     <h1>Unity Object Link</h1>
-    <nav aria-label="Language and format"><a href="README-ja.html" lang="ja">日本語</a> · <a href="../README.md">Markdown</a></nav>
+    <nav aria-label="Language and format"><a href="README-ja.html" lang="ja">日本語</a> · <a href="README.md">Markdown</a></nav>
   </header>
   <main>
     <p>Unity Object Link creates stable links to Unity assets, sub-assets, Prefab objects, and objects in saved, loaded Scenes. Opening a link selects and pings the object in the matching running Unity Editor project.</p>
     <p>The package is Editor-only and supports Unity 2022.3 LTS or newer. Windows and macOS protocol handlers run entirely in the current user's account and require no administrator privileges or additional runtime.</p>
-    <aside class="notice"><strong>Package metadata:</strong> Package ID <code>com.eorfeorf.unity-object-link</code> · Author <code>eorfeorf</code> · License <a href="../LICENSE.md">MIT</a></aside>
+    <aside class="notice"><strong>Package metadata:</strong> Package ID <code>com.eorfeorf.unity-object-link</code> · Author <code>eorfeorf</code> · License <a href="LICENSE.md">MIT</a></aside>
 
     <h2>Install</h2>
     <p>This repository is a UPM package at its root. During local development, choose <strong>Window &gt; Package Management &gt; Package Manager &gt; + &gt; Add package from disk</strong> and select <code>package.json</code>. To install from GitHub, use <strong>Add package from git URL</strong> with <code>https://github.com/eorfeorf/UnityObjectLink.git</code>.</p>
@@ -83,17 +83,17 @@
 
     <h2>Security and privacy</h2>
     <p>The OS handler accepts only the <code>select</code> action and exactly three bounded parameters. Scheme and Project ID values are restricted before they are used in local paths. Requests cannot name an executable, command, or filesystem path. The handler only writes a uniquely named request into a fixed per-user inbox when a fresh heartbeat proves that the target project is running.</p>
-    <p>See <a href="Security.md">Security model</a> and <a href="UriSpecification.md">URI specification</a> for the complete validation contract.</p>
+    <p>The handler validates the action, parameter count, input sizes, scheme, Project ID, and heartbeat before writing a request; links cannot supply an executable, command, or filesystem path.</p>
 
     <h2>Client compatibility</h2>
-    <p>Custom URI link behavior depends on the application and its security policy. Some clients display a custom scheme as plain text or require a confirmation prompt. See <a href="Compatibility.md">Compatibility</a> and the <a href="ClientCompatibilityChecklist.md">manual checklist</a>. An HTTPS redirect service is intentionally outside version 1 and may be considered later.</p>
+    <p>Custom URI link behavior depends on the application and its security policy. Some clients display a custom scheme as plain text or require a confirmation prompt. Verify the target browser or collaboration client before sharing links. An HTTPS redirect service is intentionally outside version 1 and may be considered later.</p>
 
     <h2>Development</h2>
-    <p><code>DevelopmentProject~</code> is the interactive Unity 6 development project. <code>TestProject~</code> and <code>TestProject2022~</code> are minimal Unity 6 and Unity 2022.3 command-line validation projects. The package's EditMode tests cover URI validation, storage and inbox behavior, and <code>GlobalObjectId</code> round trips. See <a href="Testing.md">Testing</a>, <a href="Architecture.md">Architecture</a>, and <a href="PlatformIntegration.md">Platform integration</a>.</p>
+    <p><code>DevelopmentProject~</code> is the interactive Unity 6 development project. <code>TestProject~</code> and <code>TestProject2022~</code> are minimal Unity 6 and Unity 2022.3 command-line validation projects. The package's EditMode tests cover URI validation, storage and inbox behavior, and <code>GlobalObjectId</code> round trips.</p>
 
     <h2>License</h2>
-    <p>This project is licensed under the <a href="../LICENSE.md">MIT License</a>.</p>
+    <p>This project is licensed under the <a href="LICENSE.md">MIT License</a>.</p>
   </main>
-  <footer>Japanese documentation: <a href="README-ja.html" lang="ja">README-ja.html</a> · Markdown source: <a href="../README.md">README.md</a></footer>
+  <footer>Japanese documentation: <a href="README-ja.html" lang="ja">README-ja.html</a> · Markdown source: <a href="README.md">README.md</a></footer>
 </body>
 </html>

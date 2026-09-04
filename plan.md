@@ -36,7 +36,7 @@
 - OSハンドラからUnityへの配送には、プロジェクト別heartbeatと一時ファイル受信箱を使う。
 - OS登録はUnityメニューと手動スクリプトの両方を提供し、ユーザー単位・管理者権限不要とする。
 - 未ロードSceneは開かず、通知して終了する。
-- README、CHANGELOG、Documentationは日本語版と英語版を用意し、Tests、Samplesとともに公開リポジトリへそのまま配置できる構成にする。
+- READMEとCHANGELOGは日本語版と英語版を用意し、Tests、Samplesとともに公開リポジトリへそのまま配置できる構成にする。
 - リポジトリ公開、package配布は実装と分離した公開前作業とする。package IDは`com.eorfeorf.unity-object-link`、作者は`eorfeorf`、licenseはMITとする。
 
 ## 設計
@@ -112,7 +112,6 @@
 ### 8. ドキュメントとSamples
 
 - `README.md`と`README-ja.md`に、セットアップ、アンインストール、URI形式、コピー方法、対応対象、Scene制約、セキュリティ方針を英語・日本語で記載する。
-- `Documentation~/`に、アーキテクチャ、URI仕様、公開API、セキュリティモデル、プラットフォーム別実装の英語版と日本語版を記載する。
 - `Samples~/Basic Usage` に、公開APIからURIを生成する最小Editor拡張例を置く。
 - `CHANGELOG.md`と`CHANGELOG-ja.md`をKeep a Changelog形式で開始する。
 - package内に個人情報、ローカル絶対パス、private URL、秘密情報、不要なバイナリが含まれないことを確認する。
@@ -128,7 +127,6 @@
   - `Platform/macOS/`
 - `Tests/Editor/`
 - `Samples~/Basic Usage/`
-- `Documentation~/`
 - `README.md`
 - `CHANGELOG.md`
 - `LICENSE.md`
@@ -143,7 +141,7 @@
 5. Windowsの登録・解除・状態確認・URI配送スクリプトとUnityメニュー連携を実装する。
 6. macOSのヘルパー生成・登録・解除・状態確認・URI配送とUnityメニュー連携を実装する。
 7. URI、GlobalObjectId、受信箱、失敗ケースを自己完結したEditModeテストで網羅する。
-8. README、CHANGELOG、Documentationの英語版と日本語版、Samplesを追加し、公開前の情報漏えいチェック項目を整備する。
+8. README、CHANGELOGの英語版と日本語版、Samplesを追加し、公開前の情報漏えいチェック項目を整備する。
 9. Unity 2022.3/Unity 6、Windows/macOS、各リンク貼り付け先でE2E確認し、互換性表を完成させる。
 
 ## 注意点
